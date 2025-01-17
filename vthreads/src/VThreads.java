@@ -1,5 +1,52 @@
-public class Main {
-    public static void main(String[] args) {
-        System.out.printf("Hello and welcome!");
+import java.io.*;
+import java.nio.file.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class VThreads {
+    final BufferedWriter out = Files.newBufferedWriter(Path.of("/tmp/id"));
+    Runnable ioBoundRunnable = () -> {
+        try {
+            out.write("A");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    };
+    int number = 0;
+    Runnable cpuBoundRunnable = () -> {
+        for (int i = 0; i < 10000; i++) {
+            number++;
+        }
+    };
+
+    public VThreads() throws IOException {
+        // Default constructor to handle exceptions from opening "out"
+    }
+
+    public static void main(String[] args) throws IOException {
+        System.out.println("Hello and welcome!");
+        VThreads demo = new VThreads();
+        ExecutorService oldPool = Executors.newCachedThreadPool();
+        demo.takeTime("Traditional, IO", oldPool, demo.ioBoundRunnable);
+
+        ExecutorService newPool = Executors.newVirtualThreadPerTaskExecutor();
+        demo.takeTime("Virtual, IO", newPool, demo.ioBoundRunnable);
+
+        demo.takeTime("Traditional, CPU", oldPool, demo.cpuBoundRunnable);
+
+        demo.takeTime("Virtual, CPU", newPool, demo.cpuBoundRunnable);
+
+        oldPool.close();
+        newPool.close();
+    }
+
+    public void takeTime(String descr, ExecutorService pool, Runnable r) throws IOException {
+        long t0 = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++) {
+            pool.submit(r);
+        }
+        out.flush();
+        long t1 = System.currentTimeMillis();
+        System.out.println(descr + " elapsed time " + (t1-t0) + "mSec");
     }
 }
