@@ -1,3 +1,7 @@
 = sixgems
 
 Code examples for "Six Gems for Six Javas"
+
+This repo consists of half a dozen independant projects.
+This was necessary because different recent versions of Java 
+and/or --preview arguments are required for some of these examples.

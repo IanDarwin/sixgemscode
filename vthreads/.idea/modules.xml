@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/sixgems.iml" filepath="$PROJECT_DIR$/sixgems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vthreads.iml" filepath="$PROJECT_DIR$/vthreads.iml" />
     </modules>
   </component>
 </project>
