@@ -1,4 +1,4 @@
-package blocksdocs;
+package blocks;
 
 /**
  * Demonstrate multi-line Strings, a.k.a. Text Blocks
