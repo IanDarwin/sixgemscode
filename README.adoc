@@ -1,6 +1,6 @@
 = sixgems
 
-Code examples for "Six Gems for Six Javas"
+Code examples for "Six Jewels for Six Javas"
 
 This repo consists of half a dozen independant projects.
 This was necessary because different recent versions of Java 
