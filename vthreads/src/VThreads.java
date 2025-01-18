@@ -26,18 +26,18 @@ public class VThreads {
     public static void main(String[] args) throws IOException {
         System.out.println("Hello and welcome!");
         VThreads demo = new VThreads();
-        ExecutorService oldPool = Executors.newCachedThreadPool();
-        demo.takeTime("Traditional, IO", oldPool, demo.ioBoundRunnable);
+        ExecutorService oldPool, newPool;
+        oldPool = Executors.newCachedThreadPool();
+        demo.takeTime("Traditional Threads, IO busy", oldPool, demo.ioBoundRunnable);
 
-        ExecutorService newPool = Executors.newVirtualThreadPerTaskExecutor();
-        demo.takeTime("Virtual, IO", newPool, demo.ioBoundRunnable);
+        newPool = Executors.newVirtualThreadPerTaskExecutor();
+        demo.takeTime("Virtual Threads, IO busy", newPool, demo.ioBoundRunnable);
 
-        demo.takeTime("Traditional, CPU", oldPool, demo.cpuBoundRunnable);
+        oldPool = Executors.newCachedThreadPool();
+        demo.takeTime("Traditional Threads, CPU bound", oldPool, demo.cpuBoundRunnable);
 
-        demo.takeTime("Virtual, CPU", newPool, demo.cpuBoundRunnable);
-
-        oldPool.close();
-        newPool.close();
+        newPool = Executors.newVirtualThreadPerTaskExecutor();
+        demo.takeTime("Virtual Threads, CPU bound", newPool, demo.cpuBoundRunnable);
     }
 
     public void takeTime(String descr, ExecutorService pool, Runnable r) throws IOException {
@@ -45,6 +45,8 @@ public class VThreads {
         for (int i = 0; i < 100000; i++) {
             pool.submit(r);
         }
+        pool.shutdown();
+        pool.close();
         out.flush();
         long t1 = System.currentTimeMillis();
         System.out.println(descr + " elapsed time " + (t1-t0) + "mSec");
