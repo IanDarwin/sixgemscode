@@ -1,0 +1,8 @@
+#!/usr/local/jdk-21/bin/java --source 21 --enable-preview
+
+import java.nio.file.*;
+
+void main() throws IOException {
+	var lines = Files.readAllLines(Path.of("/etc/passwd"));
+	System.out.printf("There are %d password entries\n", lines.size());
+}
