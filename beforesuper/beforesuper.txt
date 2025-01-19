@@ -1,0 +1,20 @@
+/// BEFORE
+/// 
+/// App calls "new Subclass()"
+/// 	Subclass constructor immediately calls Super constructor
+/// 		Superclass constructor immediately calls Object constructor
+/// 			Object construct returns (empty method body)
+/// 		Superclass constructor does initialization
+/// 	Subclass constructor does initialization
+/// App gets ref to new object
+/// 
+/// AFTER
+/// 
+/// App calls "new Subclass()"
+/// 	Subclass constructor does prologue, then calls Super constructor
+/// 		Superclass constructor does prologue, then calls Object constructor
+/// 			Object construct returns (empty method body)
+/// 		Superclass constructor does epilogue
+/// 	Subclass constructor does epilogue
+/// App gets ref to new object
+/// 
