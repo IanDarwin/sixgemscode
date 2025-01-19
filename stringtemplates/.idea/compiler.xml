@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="--enable-preview --source 21" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="stringtemplates" options="--enable-preview --source 21" />
+    </option>
+  </component>
+</project>

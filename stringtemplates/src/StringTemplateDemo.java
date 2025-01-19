@@ -1,4 +1,4 @@
-package stringtemplate;
+
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -12,7 +12,7 @@ public class StringTemplateDemo {
         System.out.println(
                 STR."Welcome \{user.name}.");
 
-        double radius = 27.5; // cm
+        double radius = 17.5; // cm
         System.out.println(
                 STR."Your holdings are worth \{user.holdings * coinPrice} iancoin");
 
