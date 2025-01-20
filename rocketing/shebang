@@ -1,5 +1,6 @@
-#!/usr/local/jdk-21/bin/java --source 21 --enable-preview
+#!/usr/bin/env java --source 24 --enable-preview
 
+import java.io.IOException;
 import java.nio.file.*;
 
 void main() throws IOException {
