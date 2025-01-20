@@ -1,3 +1,3 @@
 javadoc:
-	cd src; javadoc -package -d /tmp/javadocdemo docs
+	cd src; javadoc -d /tmp/javadocdemo -package docs
 	open /tmp/javadocdemo/index.html
