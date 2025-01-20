@@ -12,14 +12,12 @@ public class StringTemplateDemo {
         System.out.println(
                 STR."Welcome \{user.name}.");
 
-        double radius = 17.5; // cm
         System.out.println(
                 STR."Your holdings are worth \{user.holdings * coinPrice} iancoin");
 
         if (user.lastLogin != LocalDate.now()) {
-            System.out.println(
-                    STR."We haven't seen you in \{
-                            Period.between(user.lastLogin, LocalDate.now()).getDays()} days");
+            System.out.println(STR."We haven't seen you in \{
+                    Period.between(user.lastLogin, LocalDate.now()).getDays()} days");
         }
 
     }
@@ -27,7 +25,6 @@ public class StringTemplateDemo {
     // Definitions to make things compile
 
     // Following needs Java 16
-    static record User(String name, int holdings, LocalDate lastLogin) {
-    }
+    static record User(String name, int holdings, LocalDate lastLogin) { }
     static double coinPrice = 27.12;
 }
