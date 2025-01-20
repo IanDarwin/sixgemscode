@@ -8,16 +8,18 @@ public class StatementsBeforeSuper2 {
         this.lastName = lastName;
         this.firstName = firstName;
         recordCreated = LocalDate.now();
-        // We did all that before the call to super!
+        // We did all the above before the call to super!
+        // However, we can NOT do the following before super()
+        // String s = toString();
         super();
         // Potential problems with setting inherited fields though.
     }
 
     @Override
     public String toString() {
-        return "Customer({)" +
-                "name='" + firstName + ' ' + lastName +
-                "; recordCreated=" + recordCreated +
+        return "Customer(" +
+                "Name '" + firstName + ' ' + lastName +
+                "; account created on " + recordCreated +
                 ')';
     }
 

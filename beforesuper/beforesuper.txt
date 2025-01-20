@@ -1,7 +1,7 @@
 /// BEFORE
 /// 
 /// App calls "new Subclass()"
-/// 	Subclass constructor immediately calls Super constructor
+/// 	Subclass constructor immediately calls super() constructor
 /// 		Superclass constructor immediately calls Object constructor
 /// 			Object construct returns (empty method body)
 /// 		Superclass constructor does initialization
@@ -11,9 +11,9 @@
 /// AFTER
 /// 
 /// App calls "new Subclass()"
-/// 	Subclass constructor does prologue, then calls Super constructor
+/// 	Subclass constructor does prologue, then calls super()Switch constructor
 /// 		Superclass constructor does prologue, then calls Object constructor
-/// 			Object construct returns (empty method body)
+/// 			Object construct returns
 /// 		Superclass constructor does epilogue
 /// 	Subclass constructor does epilogue
 /// App gets ref to new object

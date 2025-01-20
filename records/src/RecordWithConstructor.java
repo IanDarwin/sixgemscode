@@ -29,7 +29,7 @@ public class RecordWithConstructor {
 
     void main2() {
         System.out.println(new Bar("Ivan"));
-        // So how does this work?
+        // So how does this one work?
         System.out.println(new Bar(123456));
     }
 

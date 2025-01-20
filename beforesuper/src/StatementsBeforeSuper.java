@@ -1,13 +1,13 @@
 import java.time.LocalDate;
 
 class One {
-	int dom;
-	One(int dom) {
-		if (dom <= 0 || dom > 31)
+	int dayOfMonth;
+	One(int dayOfMonth) {
+		if (dayOfMonth <= 0 || dayOfMonth > 31)
 			throw new IllegalArgumentException(
 				"Day of Month out of range in call to One()");
 		super();
-		this.dom = dom;
+		this.dayOfMonth = dayOfMonth;
 	}
 }
 
@@ -21,6 +21,6 @@ class Two extends One {
 public class StatementsBeforeSuper {
 	void main() {
 		var o = new Two();
-		System.out.println("Day of Month is " + o.dom);
+		System.out.println("Day of Month is " + o.dayOfMonth);
 	}
 }

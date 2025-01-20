@@ -3,7 +3,7 @@ void main() {
 	process();
 }
 
-// A classless main can call instance methods
+// An instance main can call instance methods
 void process() {
 	System.out.println("Hello from process too.");
 }
