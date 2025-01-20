@@ -11,7 +11,7 @@
 /// AFTER
 /// 
 /// App calls "new Subclass()"
-/// 	Subclass constructor does prologue, then calls super()Switch constructor
+/// 	Subclass constructor does prologue, then calls super() constructor
 /// 		Superclass constructor does prologue, then calls Object constructor
 /// 			Object construct returns
 /// 		Superclass constructor does epilogue
