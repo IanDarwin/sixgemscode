@@ -1,7 +1,5 @@
 
-/// Of course records are immutable, but occasionally you need to update one
-/// I prefer to use the "withXXX" pattern
-public class RecordWithModifiers {
+public class RecordWithWithers {
 
 	record Customer(String firstName, String lastName, int customerId) {
 		///  Create a new Customer with the lastname changed

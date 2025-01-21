@@ -1,0 +1,7 @@
+// Proposed as a REVIEW feature in Java 25
+
+record Customer(String firstName, String lastName, int customerId) {
+
+Customer c1 = new Customer("Ian", "Darwin", 123456);
+
+c1 = c1 with { customerNumber = 678910 }
