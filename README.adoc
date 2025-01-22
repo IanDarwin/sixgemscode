@@ -1,6 +1,7 @@
-= sixgems
+= Six Jewels for Six-Ten Javas
 
-Code examples for "Six Jewels for Six Javas"
+Code examples for "Six Jewels for Six Javas" a.k.a. "Six Gems",
+presented at JChampionsConf 2025 and viewable on Youtube after.
 
 This repo consists of half a dozen independant projects.
 This was necessary because different recent versions of Java 
