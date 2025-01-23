@@ -1,6 +1,6 @@
-= Six Jewels for Six-Ten Javas
+= Six Jewels for Sister Java
 
-Code examples for "Six Jewels for Six Javas" a.k.a. "Six Gems",
+Code examples for "Six Jewels for Sister Java" a.k.a. "Six Gems",
 presented at JChampionsConf 2025 and viewable on Youtube after.
 
 This repo consists of half a dozen independant projects.
