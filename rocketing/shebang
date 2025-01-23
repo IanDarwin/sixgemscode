@@ -1,7 +1,7 @@
 #!/usr/bin/env java --source 24 --enable-preview
 
-import java.io.IOException;
-import java.nio.file.*;
+//import java.io.IOException;
+//import java.nio.file.*;
 
 void main() throws IOException {
 	var lines = Files.readAllLines(Path.of("/etc/passwd"));

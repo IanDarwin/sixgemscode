@@ -15,7 +15,7 @@ public class ExpressionSwitch {
                 println("Stop");
                 break;
             case Color.AMBER:
-                println("Clear intersetion");
+                println("Clear intersection");
                 break;
             case Color.GREEN:
                 println("Full steam ahead!");
@@ -31,6 +31,7 @@ public class ExpressionSwitch {
             case Color.RED -> "Stop";
             case Color.AMBER -> "Clear intersection";
             case Color.GREEN -> "Full steam ahead!";
+            // For enums, default not needed - compiler checks!
         };
     }
 }

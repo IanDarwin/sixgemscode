@@ -16,7 +16,7 @@ public class RecordWithWithers {
 
         System.out.printf("Hello, %s!\n", customer.firstName());
 
-		customer = customer.withLastName("Smythe"); // Pattern: x = x.withXXX(value);πµ
+		customer = customer.withLastName("Smythe"); // Pattern: x = x.withXXX(value);
 
 		System.out.println("Name reversed is " + customer.nameReversed());
     }
