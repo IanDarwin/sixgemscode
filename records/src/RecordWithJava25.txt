@@ -1,4 +1,4 @@
-// Proposed as a REVIEW feature in Java 25
+// Proposed as a PREVIEW feature in Java 25
 
 record Customer(String firstName, String lastName, int customerId) {
 
